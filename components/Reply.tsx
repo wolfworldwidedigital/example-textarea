@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 
 export function Reply() {
-  const { sendEmail } = useEmails();
+  const { sendEmail, emails } = useEmails();
   const [input, setInput] = useState("");
 
   const handleReply = () => {
