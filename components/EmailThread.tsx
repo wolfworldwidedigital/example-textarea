@@ -1,4 +1,4 @@
-import { useEmails } from "@/lib/hooks/use-email";
+import { useEmails } from "@/lib/hooks/use-emails";
 import { Reply } from "./Reply";
 
 export function EmailThread() {

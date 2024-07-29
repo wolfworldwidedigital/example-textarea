@@ -2,7 +2,7 @@
 
 import { EmailThread } from "@/components/EmailThread";
 import { ProvideApiKeyDialog } from "@/components/ProvideApiKeyDialog";
-import { EmailsProvider } from "@/lib/hooks/use-email";
+import { EmailsProvider } from "@/lib/hooks/use-emails";
 import { CopilotKit } from "@copilotkit/react-core";
 import "@copilotkit/react-ui/styles.css";
 import { useSearchParams } from "next/navigation";

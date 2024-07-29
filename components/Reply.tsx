@@ -1,5 +1,4 @@
-import { useEmails } from "@/lib/hooks/use-email";
-import { Textarea } from "./ui/textarea";
+import { useEmails } from "@/lib/hooks/use-emails";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { CopilotTextarea } from "@copilotkit/react-textarea";
