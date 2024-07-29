@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { Email } from "../emails.types";
 import emailHistory from "./email-history.json";
+import { useCopilotReadable } from "@copilotkit/react-core";
 
 type EmailsContextType = {
   emails: Email[];
@@ -29,6 +30,11 @@ export const EmailsProvider = ({ children }: { children: ReactNode }) => {
     };
     setEmails([...emails, email]);
   };
+
+  useCopilotReadable({
+    description: "The history of this email thread",
+    value: emails
+  });
   
   return (
     <EmailsContext.Provider

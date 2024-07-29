@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { CopilotTextarea } from "@copilotkit/react-textarea";
 
 export function Reply() {
-  const { sendEmail, emails } = useEmails();
+  const { sendEmail } = useEmails();
   const [input, setInput] = useState("");
 
   const handleReply = () => {
@@ -24,7 +24,7 @@ export function Reply() {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Write your reply..."
         autosuggestionsConfig={{
-          textareaPurpose: `Asisst me in replying to this email thread. Here is the full history: ${JSON.stringify(emails, null, 2)}`,
+          textareaPurpose: `Asisst me in replying to this email thread. Remmeber all important details.`,
           chatApiConfigs: {}
         }}
       />
