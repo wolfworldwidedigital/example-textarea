@@ -4,7 +4,11 @@ import emailHistory from "./email-history.json";
 
 type EmailsContextType = {
   emails: Email[];
-  addEmail: (email: Email) => void;
+  sendEmail: ({
+    body
+  }: {
+    body: string;
+  }) => void;
 };
 
 const EmailsContext = createContext<EmailsContextType | undefined>(undefined);
@@ -12,13 +16,23 @@ const EmailsContext = createContext<EmailsContextType | undefined>(undefined);
 export const EmailsProvider = ({ children }: { children: ReactNode }) => {
   const [emails, setEmails] = useState<Email[]>(emailHistory);
 
-  const addEmail = (email: Email) => {
+  const sendEmail = ({
+    body
+  }: {
+    body: string;
+  }) => {
+    const email = {
+      from: "me",
+      to: "John Doe <john@acme.com>",
+      body,
+      timestamp: new Date().toISOString(),
+    };
     setEmails([...emails, email]);
   };
   
   return (
     <EmailsContext.Provider
-      value={{ emails, addEmail }}
+      value={{ emails, sendEmail }}
     >
       {children}
     </EmailsContext.Provider>

@@ -1,22 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { useEmails } from "@/lib/hooks/use-email";
-import { useState } from "react";
+import { Reply } from "./Reply";
 
 export function EmailThread() {
-  const [input, setInput] = useState("");
-  const { emails, addEmail } = useEmails();
-
-  const handleReply = () => {
-    console.log(input);
-    addEmail({
-      from: "me",
-      to: "John Doe <john@acme.com>",
-      body: input,
-      timestamp: new Date().toISOString(),
-    });
-    setInput("");
-  };
+  const { emails } = useEmails();
 
   return (
     <main className="flex h-full flex-col items-center justify-between">
@@ -62,18 +48,7 @@ export function EmailThread() {
                 ))}
 
                 <hr className="my-2" />
-
-                <div className="mt-4 pt-4 space-y-2 bg-background p-4 rounded-md border">
-                  <Textarea
-                    className="min-h-40"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder="Write your reply..."
-                  />
-                  <Button disabled={!input} onClick={handleReply}>
-                    Reply
-                  </Button>
-                </div>
+                <Reply />
               </div>
             </div>
           </div>
