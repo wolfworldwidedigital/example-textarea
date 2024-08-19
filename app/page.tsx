@@ -6,9 +6,11 @@ import { CopilotKit } from "@copilotkit/react-core";
 import "@copilotkit/react-textarea/styles.css";
 
 export default function Home() {
+  const COPILOT_CLOUD_PUBLIC_API_KEY = process.env.NEXT_PUBLIC_COPILOT_CLOUD_PUBLIC_API_KEY;
+
   return (
     <div className="h-screen">
-      <CopilotKit publicApiKey="ck_pub_68042cff5088605d9c8ee8ead7b09c69">
+      <CopilotKit publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY}>
         <EmailsProvider>
           <EmailThread />
         </EmailsProvider>
