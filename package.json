@@ -11,7 +11,6 @@
   "dependencies": {
     "@copilotkit/react-core": "^1.1.0",
     "@copilotkit/react-textarea": "^1.1.0",
-    "@copilotkit/react-ui": "^1.1.0",
     "@copilotkit/runtime-client-gql": "^1.1.0",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
